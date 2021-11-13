@@ -1,0 +1,14 @@
+<nav class="nav">
+    <a href="#" class="brand">Immobilier</a>
+    <p>Annonce d'aujourd'hui</p>
+  </nav>
+
+  <div class="container">
+    <div *ngFor="let item of list" class="emoji"  (click)="showDetail(item)">
+      <img src="./assets/img/imob.jpeg" alt="">
+      <span class="titre">{{item.titre}}</span>
+    </div>
+    <button (click)="addItem()" > Ajouter </button>
+  </div>
+
+  
