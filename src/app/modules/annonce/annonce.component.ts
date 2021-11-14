@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BienService } from './annonce.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { BienService } from './annonce.service';
 })
 export class AnnonceComponent implements OnInit {
   list;
-  constructor(private bienService:BienService) { }
+  constructor(private bienService:BienService,private router:Router) { }
 
   ngOnInit(): void {
     this.bienService.getBien().subscribe(res=>{      
@@ -17,12 +18,17 @@ export class AnnonceComponent implements OnInit {
     });
   
   }
-
+  /**
+   * show Detail annonce
+   * @param $event 
+   */
   showDetail($event){
-    console.log($event);
+    console.log($event.idBien);
+    
+    this.router.navigateByUrl('/detail',{state:{annonce:$event.idBien}})
   }
 
   addItem(){
-
+    this.router.navigateByUrl('/add')
   }
 }

@@ -16,11 +16,21 @@ export class BienService {
     }
     
     /**
-     * get Bien
+     * get all Bien
      */
     getBien(): Observable<any>{
       return this.http.getObject(this.hostService.getAuthHost() + this.urlGetBiens);
     }
+
+    /**
+     * get Bien By Id
+     * @param idBien 
+     * @returns 
+     */
+    getBienById(idBien):Observable<any>{
+      return this.http.getObject(this.hostService.getAuthHost()+this.urlGetBiens+"/"+idBien)
+    }
+
     /**
      * delete Bien
      * @param bien
