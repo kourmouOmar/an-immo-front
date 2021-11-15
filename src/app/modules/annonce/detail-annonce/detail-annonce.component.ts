@@ -22,4 +22,8 @@ export class DetailAnnonceComponent implements OnInit {
    });
   }
 
+  convertebyteToImg(byteImg){
+    return "data:image/jpeg;base64,"+byteImg
+  }
+
 }

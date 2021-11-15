@@ -32,6 +32,16 @@ export class BienService {
     }
 
     /**
+     * add Bien
+     * 
+     * @param bien 
+     * @returns 
+     */
+    addBien(bien):Observable<any>{
+      return this.http.postObject(bien,this.hostService.getAuthHost() + this.urlGetBiens)
+    }
+
+    /**
      * delete Bien
      * @param bien
      * @returns

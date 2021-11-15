@@ -18,6 +18,7 @@ export class AnnonceComponent implements OnInit {
     });
   
   }
+
   /**
    * show Detail annonce
    * @param $event 
@@ -28,7 +29,14 @@ export class AnnonceComponent implements OnInit {
     this.router.navigateByUrl('/detail',{state:{annonce:$event.idBien}})
   }
 
+  /**
+   * add item
+   */
   addItem(){
     this.router.navigateByUrl('/add')
+  }
+
+  convertebyteToImg(byteImg){
+    return "data:image/jpeg;base64,"+byteImg
   }
 }

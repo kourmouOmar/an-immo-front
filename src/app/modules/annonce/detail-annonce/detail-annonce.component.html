@@ -5,7 +5,8 @@
 
 <div class="container">
     <div class="img"> 
-        <img src="./assets/img/imob.jpeg" alt="">
+        <img *ngIf="annonce.image == null"  src="./assets/img/imob.jpeg" alt="">
+        <img *ngIf="annonce.image != null" width="400px !important" height="300px" [src]="convertebyteToImg(annonce.image)" alt="">
     </div>
     <div class="detail">
         {{annonce?.titre}}<br>

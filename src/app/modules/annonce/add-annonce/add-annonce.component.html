@@ -1,1 +1,24 @@
-<p>add-annonce works!</p>
+<nav class="nav">
+    <a href="#" class="brand">Immobilier</a>
+    <p> Nouveau annonce </p>
+</nav>
+
+<div class="container">
+    <form [formGroup]="bienFormGroup">
+        <mat-form-field class="takeAllWith">
+            <mat-label>titre</mat-label>
+            <input class="textField" matInput placeholder="Libelle" formControlName="titre" required />
+        </mat-form-field>
+        <mat-form-field class="takeAllWith">
+            <mat-label>description</mat-label>
+            <input class="textField" matInput placeholder="Libelle" formControlName="description" required />
+        </mat-form-field>
+        <input type="file" placeholder="image" (change)="handleFileInput($event.target.files)" formControlName="image" ><br>
+        <button mat-button class="rightbtn primary-btn " (click)="addAnnonce()">Soumettre</button>
+    </form>
+
+    
+</div>
+
+
+  
